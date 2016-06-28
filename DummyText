@@ -1,0 +1,75 @@
+1.link:-http://blacktie.co/demo/munter/
+
+//code for typeahead search box
+	<!DOCTYPE HTML>
+	<html>
+	<head>
+	  <meta charset="utf-8">
+	  <title>Create an autocomplete input box with typeahead.js</title>
+
+	
+	</head>
+	
+	<body>
+
+<div id="prefetch">
+  <input class="typeahead" type="text" placeholder="Countries">
+</div>
+  <!-- Load jQuery and the typeahead JS files -->
+  <script type="text/javascript" src="http://twitter.github.io/typeahead.js/js/handlebars.js"></script>
+  
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/typeahead.bundle.min.js"></script>
+	
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/bloodhound.min.js"></script>
+<script>
+var countries = new Bloodhound({
+	  datumTokenizer: Bloodhound.tokenizers.whitespace,
+	  queryTokenizer: Bloodhound.tokenizers.whitespace,
+	  // url points to a json file that contains an array of country names, see
+	  // https://github.com/twitter/typeahead.js/blob/gh-pages/data/countries.json
+	  prefetch: './data/countries.json'
+	});
+
+	// passing in `null` for the `options` arguments will result in the default
+	// options being used
+	$('#prefetch .typeahead').typeahead(null, {
+      source: countries
+	});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('input.typeahead').typeahead({
+      valueKey: 'name',
+      remote : {
+        url : 'http://example.com/chk.php?query=%QUERY',
+
+        filter: function (parsedResponse) {
+          var dataset = [];   
+
+          for (i = 0; i < parsedResponse.length; i++) {
+            dataset.push({
+              name: parsedResponse[i].name,
+              link:  parsedResponse[i].link
+            });
+          }
+
+          if (parsedResponse.length == 0) {
+            dataset.push({
+              name: "No results" 
+            }); 
+          }
+
+          return dataset;
+        },
+      },
+    })
+    .bind('typeahead:selected', function (obj, datum) {
+      window.location.href = datum.link;
+    });
+  })
+</script>
+
+	</body> 
+	</html>
