@@ -1,78 +1,11 @@
-1.http://school.inilabs.net/v2.2/signin/index
-.link:-http://blacktie.co/demo/munter/
-http://builtbywill.com/code/booklet/demos/size
+                                 Servicer
+Servicer is a online platform where user can find any type of services that they want.Based on authenticity provided by us and review and star point user can book technician.
+Once you booked the technician you will receive a call from customer care regarding confirmation and once got confirmed you will receive message regarding technician detail,basic charges and time to visit.
 
+Basic flow:-
 
-//code for typeahead search box
-	<!DOCTYPE HTML>
-	<html>
-	<head>
-	  <meta charset="utf-8">
-	  <title>Create an autocomplete input box with typeahead.js</title>
+User---> Application-->Serach for required technician-->Book technician
+Visit <-- Receive message<--get confirmed <--Call User <--Customer care
+Technician-->Rapair the thing -->Payment done-->Task complete
 
-	
-	</head>
-	
-	<body>
-
-<div id="prefetch">
-  <input class="typeahead" type="text" placeholder="Countries">
-</div>
-  <!-- Load jQuery and the typeahead JS files -->
-  <script type="text/javascript" src="http://twitter.github.io/typeahead.js/js/handlebars.js"></script>
-  
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/typeahead.bundle.min.js"></script>
-	
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/0.11.1/bloodhound.min.js"></script>
-<script>
-var countries = new Bloodhound({
-	  datumTokenizer: Bloodhound.tokenizers.whitespace,
-	  queryTokenizer: Bloodhound.tokenizers.whitespace,
-	  // url points to a json file that contains an array of country names, see
-	  // https://github.com/twitter/typeahead.js/blob/gh-pages/data/countries.json
-	  prefetch: './data/countries.json'
-	});
-
-	// passing in `null` for the `options` arguments will result in the default
-	// options being used
-	$('#prefetch .typeahead').typeahead(null, {
-      source: countries
-	});
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('input.typeahead').typeahead({
-      valueKey: 'name',
-      remote : {
-        url : 'http://example.com/chk.php?query=%QUERY',
-
-        filter: function (parsedResponse) {
-          var dataset = [];   
-
-          for (i = 0; i < parsedResponse.length; i++) {
-            dataset.push({
-              name: parsedResponse[i].name,
-              link:  parsedResponse[i].link
-            });
-          }
-
-          if (parsedResponse.length == 0) {
-            dataset.push({
-              name: "No results" 
-            }); 
-          }
-
-          return dataset;
-        },
-      },
-    })
-    .bind('typeahead:selected', function (obj, datum) {
-      window.location.href = datum.link;
-    });
-  })
-</script>
-
-	</body> 
-	</html>
+After job done,You will receive bill through message and email and warrenty detail of this services.
