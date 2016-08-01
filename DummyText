@@ -8,4 +8,36 @@ User---> Application-->Serach for required technician-->Book technician
 Visit <-- Receive message<--get confirmed <--Call User <--Customer care
 Technician-->Rapair the thing -->Payment done-->Task complete
 
-After job done,You will receive bill through message and email and warrenty detail of this services.
+After job done,You will receive invoice through message and email and warranty detail of this services.
+
+Module:-
+1. Landing Page
+2. Search result Page
+3. Profile page
+4. Booking page
+5. Login page
+6. Registration page
+
+Landing page:-
+a. Navigation bar(login and register included)
+b. Search box
+c. About us
+d. What we provide
+e. Contact us
+f. Footer
+
+Search Result page:-
+A.Navigation bar
+b.Filter box
+c.Search result page(Dynamic container)
+d.footer
+
+client profile page:-
+a. Cover page and profile like facebook
+b. Name and basic detail
+c. Authentic account tab
+d. Recent work photo and description
+f. User review
+g. Booking tab
+Booking page:-
+a.
