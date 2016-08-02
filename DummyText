@@ -1,4 +1,4 @@
-                                                                          Servicer
+                                                                           Servicer
 Servicer is a online platform where user can find any type of services that they want.Based on authenticity provided by us and review and star point user can book technician.
 Once you booked the technician you will receive a call from customer care regarding confirmation and once got confirmed you will receive message regarding technician detail,basic charges and time to visit.
 
@@ -48,6 +48,22 @@ Closed time-- >
 a.Current ticket resolved date:-
 b.Can he take another ticket:-
 if yes in above field      1.Time after he is free
+
+Database:-
+User
+Employee
+Employee_type
+Invoice
+Login 
+Registration
+Booking
+
+User  Table:-
+Username
+Name
+Mobile Number
+Password
+Booking_id
 
 
 
